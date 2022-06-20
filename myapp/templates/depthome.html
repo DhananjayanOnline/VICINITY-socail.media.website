@@ -1,0 +1,36 @@
+{% extends 'deptbase.html' %}
+
+{% block content %}
+
+
+<div style="margin-left:500px; margin-top:70px; margin-botton:-100px">
+    <a href="{% url 'postdept' %}">Create Post</a>
+    &nbsp; &nbsp;
+    <a href="{% url 'announcement' %}">Create Announcement</a>
+</div>
+
+<!--<style>-->
+<!--    .home-container{-->
+<!--        display: grid;-->
+<!--        grid-template-columns:1.2fr 3fr 2fr;-->
+<!--    }-->
+<!--</style>-->
+
+<!--<div class="home-container">-->
+    <div>
+        {% include 'sidebardept.html' %}
+    </div>
+
+    <div>
+        {% include 'displayPost.html' %}
+    </div>
+
+    <div>
+        {% include 'announcementlist.html' %}
+    </div>
+<!--</div>-->
+
+
+
+
+{% endblock content %}

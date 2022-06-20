@@ -1,0 +1,90 @@
+{% extends 'homebase.html' %}
+
+
+{% block content %}
+
+<style>
+.header{
+   background-image: url(https://img.huffingtonpost.com/asset/5d0188d52100003711ea6a82.jpeg?ops=1778_1000);
+   height: 100%;
+   width: 100%;
+}
+
+.header .login{
+padding:300px;
+}
+
+.login{
+width:65rem
+}
+
+</style>
+
+<section class="header">
+
+    <center>
+        <div class="login" >
+
+        <form method="post" enctype="application/x-www-form-urlencoded">
+            {% csrf_token %}
+              <!-- Username input -->
+              <div class="form-outline mb-1">
+                <input type="text" id="form2Example1" class="form-control" name="t1"/>
+                <label class="form-label" for="form2Example1">Username</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-1">
+                <input type="password" id="form2Example2" class="form-control" name="t2"/>
+                <label class="form-label" for="form2Example2">Password</label>
+              </div>
+
+
+              <!-- Submit button -->
+            <center>
+                <div class="d-grid gap-2">
+                     <input type="submit" value="Login" class="btn btn-primary ">Login</input>
+                </div>
+
+            </center>
+        </form>
+
+        <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <!-- Simple link -->
+                  <a href="#!">Forgot password?</a>
+                </div>
+              </div>
+        </div>
+    </center>
+
+        <form action="" method="post" enctype="application/x-www-form-urlencoded">
+            {% csrf_token %}
+            Username <input type="text" name="t1">
+            Password <input type="text" name="t2">
+            <input type="submit" value="Login">
+        </form>
+
+
+    <div>
+
+    </div>
+
+</section>
+
+
+
+<!--<br>-->
+<!--<br>-->
+<!--    <small>Go back to home</small>-->
+<!--    <span><a href="{% url 'home'%}">Click here</a></span>-->
+{% endblock content %}

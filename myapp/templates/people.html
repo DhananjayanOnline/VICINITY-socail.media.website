@@ -1,0 +1,78 @@
+{% extends 'userbase.html' %}
+
+
+{% block content %}
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns:1.2fr 3fr 2fr;
+    }
+</style>
+
+<body>
+
+<div class="home-container">
+    
+    <div>
+        {% include 'sidebardept.html' %}
+    </div>
+
+
+
+    <section>
+
+        <div class="neighbours text-center">
+            <div>
+                <h6 class="display-6">Neighbours</h6>
+            </div>
+            <div class="row">
+                {% for i in nrec %}
+                <div class="col-lg-2" style="margin-left:30px">
+                    <div class="card shadow-lg" style="width: 15rem; margin-left:250px">
+                        <img src="{{i.photo.url}}" class="card-img-top" alt="..." style="object-fit:cover;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{i.username}}</h5>
+                          <p class="card-text">------Status------</p>
+                          <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="button"><a href="/peopleprofile/{{i.username}}" style="text-decoration:none; color:white; font-weight:500">View Profile</a></button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+<!--    <div style="margin-left:70px">-->
+<!--        <h3>Neighbours</h3>-->
+<!--        <br>-->
+<!--        <hr>-->
+<!--        <table border="1">-->
+<!--            <th>User ID</th>-->
+<!--            <th>Image</th>-->
+<!--            <th>Username</th>-->
+<!--            <th>Panchayath</th>-->
+<!--            <th>House No</th>-->
+<!--            <th>House Name</th>-->
+
+<!--            {% for i in nrec %}-->
+<!--          <tr>-->
+<!--              <td>{{i.uid}}</td>-->
+<!--              <td><img src="{{i.photo.url}}" alt="" style="width:170px;"></td>-->
+<!--              <td>{{i.username}}</td>-->
+<!--              <td>{{i.panchayath}}</td>-->
+<!--              <td>{{i.house_number}}</td>-->
+<!--              <td>{{i.house_name}}</td>-->
+<!--          </tr>-->
+<!--            {% endfor %}-->
+
+<!--        </table>-->
+<!--    </div>-->
+
+{% endblock content %}

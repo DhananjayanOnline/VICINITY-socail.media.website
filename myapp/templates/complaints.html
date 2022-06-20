@@ -1,0 +1,173 @@
+{% extends 'userbase.html' %}
+
+{% block content %}
+
+<!--<style>-->
+<!--    .home-container{-->
+<!--        display: grid;-->
+<!--        grid-template-columns:1.2fr 4fr ;-->
+<!--    }-->
+<!--</style>-->
+
+<!--<body>-->
+
+<!--<div class="home-container">-->
+
+    <div>
+        {% include 'sidebar.html' %}
+    </div>
+
+
+
+    <section>
+
+        <div class="complaints ">
+
+            <div class="row">
+
+                <div class="col-lg-8 shadow p-5 mb-5 bg-body rounded">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <div>
+                            <h6 class="display-6 " >Complaint Box</h6>
+                        </div>
+                        <div class="form-group">
+                          <label for="contactdepartment">Department</label>
+                          <select class="form-control" id="contactdepartment" name="department">
+                            <option>Panchayath</option>
+                            <option>Police Station</option>
+                            <option>Fire Force</option>
+                            <option>Village office</option>
+                          </select>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <label for="complaintbox">Write your complaint</label>
+                          <textarea class="form-control" id="complaintbox" name="complaint" rows="3" style="height:140px" required></textarea>
+
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2">
+                            <input class="btn btn-primary" type="submit" value="Submit"/>
+                        </div>
+                      </form>
+                </div>
+
+                <div class="col-lg-4">
+                    <section class="sidebarright" >
+
+                      <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse ">
+                        <div class="position-sticky">
+                          <div class="list-group list-group-flush mx-3 mt-4" >
+                            <div class="accordion" id="accordionPanelsStayOpenExample" >
+                              <h5 style="padding-top: -30px; margin-bottom: -10px; ">Emergency Contact</h5>
+                              <hr>
+                              <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                      Police Station
+                                  </h2>
+                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">phone : 1234567890</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                      Fire Force
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">phone : 1234567890</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                       Hospital
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">phone : 1234567890</div>
+                                  </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFour">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Panchayath Office
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">phone : 1234567890</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFive">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                        Village Office
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">phone : 1234567890</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingSix">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                        Collectrate
+                                      </button>
+                                    </h2>
+                                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                      <div class="accordion-body">phone : 1234567890</div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </nav>
+                      <!-- Sidebar -->
+
+                    </section>
+                  </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+<!--    <div>-->
+<!--        <h3>Complaints</h3>-->
+<!--        <br>-->
+<!--        <hr>-->
+<!--        <div style="margin-left: 90px">-->
+<!--            <form action="" method="post" enctype="multipart/form-data">-->
+<!--                {% csrf_token %}-->
+
+<!--                {{form.as_p}}-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <label for="">Department</label>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <input type="text" name="department" id="">-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <textarea name="complaint" style="width:70%; height:200px">Write your complaint here...</textarea>-->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <input type="submit" value="Submit">-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</body>
+{% endblock content %}
