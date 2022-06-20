@@ -1,0 +1,125 @@
+{% extends 'homebase.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<style>
+.header{
+   background-image: url({% static 'images/login-header-1.jpg' %});
+   height: 100%;
+   width: 100%;
+   top:0 !important;
+   position:fixed;
+}
+
+.header .login{
+background: rgb(0, 0, 0, 0.5);
+width:550px;
+height: 200px;
+margin-top:20px;
+padding:20px;
+border-radius:15px;
+}
+
+.login-box h1{
+color:white;
+margin-top:150px;
+margin-left:365px;
+font-style:italic;
+font-weight: 700;
+font-size: 48px;
+line-height: 52px;
+text-shadow:  1px 4px 30px black;
+font-family: Noto Sans, sans-serif;
+}
+
+
+</style>
+
+
+
+<section class="header">
+    <div class="login-box">
+        <h1 class="">
+                Tap into your
+                <br>
+                neighbourhood
+        </h1>
+        <center>
+        <div class="login">
+
+        <form method="post" enctype="application/x-www-form-urlencoded" autocomplete="off" >
+            {% csrf_token %}
+              <!-- Username input -->
+              <div class="form-outline mb-1 p-1">
+                <input type="text" id="form2Example1" class="form-control" name="t1" placeholder="Username"/>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-1 p-1">
+                <input type="password" id="form2Example2" class="form-control" name="t2" placeholder="Password"/>
+              </div>
+              <!-- Submit button -->
+            <center>
+                <div class="d-grid gap-2 p-2">
+                     <input type="submit" value="Login" class="btn btn" style="background-color: #a299ff; font-weight: 700; color:white"/>
+                </div>
+
+            </center>
+        </form>
+
+        <!-- 2 column grid layout for inline styling -->
+<!--              <div class="row mb-4">-->
+<!--                <div class="col d-flex justify-content-center">-->
+<!--                  &lt;!&ndash; Checkbox &ndash;&gt;-->
+<!--                  <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />-->
+<!--                    <label class="form-check-label" for="form2Example31"> Remember me </label>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="col">-->
+<!--                  &lt;!&ndash; Simple link &ndash;&gt;-->
+<!--                  <a href="#!">Forgot password?</a>-->
+<!--                </div>-->
+<!--              </div>-->
+            </div>
+        </center>
+    </div>
+
+    <div>
+
+    </div>
+
+</section>
+
+
+
+
+<!--<br>-->
+<!--<br>-->
+
+
+<!--&lt;!&ndash;<button type="button"><a style="text-decoration=none" href="{% url 'login' %}"><b>Login</b></a></button>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+
+<!--<br><br>-->
+<!--<small>don't have an account?</small>-->
+
+<!--<a href="{% url 'user-reg' %}">Register here</a>-->
+
+<!--<br>-->
+<!--<br>-->
+<!--<small>For Departments</small>-->
+<!--<a href="{% url 'dept-reg' %}">Register here</a>-->
+
+<!--<form action="" method="post" enctype="application/x-www-form-urlencoded">-->
+<!--            {% csrf_token %}-->
+<!--            Username <input type="text" name="t1">-->
+<!--            Password <input type="text" name="t2">-->
+<!--            <input type="submit" value="Login">-->
+<!--        </form>-->
+
+
+{% endblock content %}

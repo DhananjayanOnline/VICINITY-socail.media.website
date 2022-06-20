@@ -1,0 +1,134 @@
+{% extends 'userbase.html' %}
+
+{% block content %}
+
+<style>
+    div.scroll {
+                margin-top: 140px;
+                margin-left:300px;
+                padding:4px;
+                padding-left: 10px;
+                background-color: white;
+                width: 38rem;
+                height: 10rem;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+            }
+
+    #chatlist {
+                margin-top: 75px;
+                margin-left: 305px;
+                padding:4px;
+                padding-left: 10px;
+                padding-right:10px;
+                background-color: white;
+                width: 300px;
+                height: 475px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+                border-radius: 10px 10x 10px 10px;
+            }
+</style>
+
+<body>
+
+    <div>
+
+        <div>
+            {% include 'sidebar.html' %}
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div>
+                    <div  class="card-header bg-transparent border-success"
+                        style="margin-left: 300px; margin-top: 70px; margin-bottom: -130px; width: 38rem">
+                        <h4 class="display-6">Chat</h4>
+                    </div>
+                    <div>
+                            <div class="scroll">
+                                <table >
+                                {% for i in mr %}
+                                <tr>
+                                    <td><small style="font-size: 10px">@{{i.sendername}}</small></td>
+                                </tr>
+                                <tr>
+                                    <td>{{i.message}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            </div>
+
+                            <div class="scroll" style="margin-top: 5px;">
+                                <table>
+                                {% for i in ms %}
+                                <tr>
+                                    <td><small style="font-size: 10px">@{{i.sendername}}</small></td>
+                                </tr>
+                                <tr>
+                                    <td>{{i.message}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <form action="" method="post" style="margin-left:300px; margin-top:10px">
+                    {% csrf_token %}
+
+                    {{form.as_p}}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <textarea name="message"
+                              style="width:35rem; height:60px; background-color: white; float:left;border-radius: 0 0 0 10px;"
+                              placeholder="Message" required></textarea>
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="btn p-1 btn-primary" type="submit" value="send"
+                            style="height: 60px; width: 48px; float:left; border-radius: 0 10px 10px 0;
+                                    margin-left: 386px; background-color:#1E90FF; color:white;">
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="col-lg-6" id="chatlist">
+                <div>
+                    <div>
+                        <h4 class="display-6 card-header bg-transparent border-success" style="margin-bottom: 30px;">
+                            Chat list
+                        </h4>
+                    </div>
+
+                    <table class="table table-hover">
+                      {% for i in mlrec %}
+                        <tr>
+                          <td>
+                              <img src="{{i.photo.url}}" alt="" class="rounded-circle user_img" style="object-fit:cover; margin-right:10px;">
+                              <a style="text-decoration:none; font-weight: 400; color:black;"
+                                 href="{% url 'messagepost' i.uid i.username %}" >@{{i.username}}</a>
+                          </td>
+                      </tr>
+                      {% endfor %}
+                  </table>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+{% endblock content %}

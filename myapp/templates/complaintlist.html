@@ -1,0 +1,43 @@
+{% extends 'deptbase.html' %}
+
+{% block content %}
+
+
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns:2fr 4fr ;
+    }
+</style>
+
+
+    <div class="home-container">
+
+        <div>
+                {% include 'sidebardept.html' %}
+        </div>
+
+        <div>
+            <table  class="table" border="1" style="margin:40px; margin-top:100px; margin-left:280px; width:70%;">
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Panchayath</th>
+                <th>Department</th>
+                <th>Complaints</th>
+
+            {% for i in crec %}
+              <tr>
+                  <td>{{i.uid}}</td>
+                  <td>{{i.uname}}</td>
+                  <td>{{i.panchayath}}</td>
+                  <td>{{i.department}}</td>
+                  <td>{{i.complaint}}</td>
+              </tr>
+            {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+
+{% endblock content %}

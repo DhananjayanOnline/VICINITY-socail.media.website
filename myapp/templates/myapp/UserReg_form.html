@@ -1,0 +1,102 @@
+{% extends 'homebase.html' %}
+
+{% block content %}
+
+{%load crispy_forms_tags %}
+
+<body>
+<br><br>
+
+<div class="container" style="margin-top:-60px;">
+    <p class="lead font-italic"></p>
+        <div class="col-md-10 offset-md-1 mt-5">
+            <div class="jumbotron">
+                <h1 class="display-4">Registration</h1>
+
+                <hr class="my-4">
+
+                <form class="row g-3" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{form.fname|as_crispy_field}}
+                        </div>
+                        <div class="col-md-6">
+                            {{form.lname|as_crispy_field}}
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            {{form.panchayath|as_crispy_field}}
+                        </div>
+                        <div class="col-md-3">
+                            {{form.district|as_crispy_field}}
+                        </div>
+                        <div class="col-md-3">
+                            {{form.state|as_crispy_field}}
+                        </div>
+                        <div class="col-md-3">
+                            {{form.country|as_crispy_field}}
+                        </div>
+                    </div>
+
+                     <br>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            {{form.email|as_crispy_field}}
+                        </div>
+                        <div class="col-md-4">
+                            {{form.phone_number|as_crispy_field}}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            {{form.house_name|as_crispy_field}}
+                        </div>
+                        <div class="col-md-3">
+                            {{form.house_number|as_crispy_field}}
+                        </div>
+                        <div class="col-md-3">
+                            {{form.gender|as_crispy_field}}
+                        </div>
+                        <div class="col-md-3">
+                            {{form.dob|as_crispy_field}}
+                        </div>
+                    </div>
+
+                    {{form.username|as_crispy_field}}
+                    {{form.password|as_crispy_field}}
+
+                    {{form.photo|as_crispy_field}}
+
+
+
+<!--                    {{ form|crispy }}-->
+
+                  <input type="submit" value="Submit">
+                </form>
+
+              </div>
+        </div>
+    </div>
+
+<!--<form class="row g-3" action="" method="post" enctype="multipart/form-data">-->
+<!--    {% csrf_token %}-->
+
+<!--  {{ form|crispy }}-->
+
+<!--  <input type="submit" value="Submit">-->
+<!--</form>-->
+
+</body>
+{% endblock content %}
+
+
+<!--    <input type="submit" value="Submit">-->
+<!--</form>-->

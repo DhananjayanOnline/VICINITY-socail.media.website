@@ -1,0 +1,73 @@
+
+
+                    <section class="sidebarright" >
+
+                        <br><br>
+                        <h6 style="margin-left:60%">Announcements</h6>
+                        <hr style="width:240px; margin-left:60%">
+                        <br>
+                                {% for i in alrec %}
+                                  <div class="card1 shadow p-3 mb-5 bg-body rounded " style="width: 19rem; border-radius: 0px !important">
+                                            <div class="d-flex bd-highlight">
+                                              <div class="img_cont">
+                                                  <img src="https://www.salisburyut.com/wp-content/uploads/2020/09/avatar-1-1536x1536.jpeg" class="rounded-circle user_img">
+                                                  <!-- <span class="online_icon"></span> -->
+                                              </div>
+                                              <div class="user_info" style="margin-left: -10px;">
+                                                  <span><a href="/peopleprofile/{{i.creator}}" style="text-decoration:none;font-weight: 450; color:black">@{{i.uname}}</a></span>
+                                                  <p>{{i.created}}</p>
+                                              </div>
+                                            </div>
+
+                                            <small class="text-uppercase">
+                                                <b>
+                                                {{i.department}}
+                                                </b>
+                                            </small>
+                                      <br>
+                                            <small class="text-capitalize">
+                                                <em>
+                                                {{i.panchayath}} panchayath
+                                                </em>
+                                            </small>
+                                            <hr>
+                                            <p class="card-text">
+                                                {{i.announcement}}
+                                            </p>
+
+                                      </div>
+                                {% endfor %}
+                      <!-- Sidebar -->
+                    </section>
+
+
+
+
+
+
+
+
+<!--<div>-->
+<!--        <h3>Annoucements</h3>-->
+<!--         <br>-->
+<!--        <hr>-->
+
+<!--        <div style="margin-left:30px">-->
+
+<!--            {% for i in alrec %}-->
+
+<!--            <small>@{{i.uname}}</small>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            <span>{{i.panchayath}} panchayath</span>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            <b>{{i.department}}</b>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--            {{i.announcement}}-->
+<!--            <hr>-->
+<!--            {% endfor %}-->
+
+<!--        </div>-->
+<!--    </div>-->
